@@ -5,3 +5,88 @@ CSS-only slideshows that work in IE6+, Mozilla and Webkit.
 Requires progressive JS support to work in Opera.
 
 Based on the work of [Jenna Smith](http://growldesign.co.uk/)
+
+
+Installation
+============
+
+in your project root directory:
+
+    git clone git://github.com/ericam/compass-css-lightbox.git extensions/compass-css-lightbox/
+    compass install compass-css-lightbox
+
+
+Slideshows
+==========
+
+Your HTML:
+    
+    <div class="slideshow">
+      <div class="slides">
+        <ul>
+        
+          <!-- start slide 1 -->
+          <li id="slide-title-1">
+            <!-- slide content can be anything you like -->
+            <div class="content">
+              <h2>Slide one</h2>
+              <p><a href="#slide-title-2">NEXT</a></p>
+              <p>
+                Decima eodem modo typi qui nunc nobis videntur fiant sollemnes 
+                in. Quam nunc putamus parum claram anteposuerit litterarum 
+                formas humanitatis per seacula quarta decima et quinta! 
+                Eleifend option congue.
+              </p>
+            </div>
+          </li>
+          <!-- end slide 1 -->
+          
+          <!-- start slide 2 -->
+          <li id="slide-title-2">  
+            <!-- slide content can be anything you like -->
+            <div class="content">        
+              <h2>Slide Two</h2>
+              <p><a href="#slide-title-1">PREV</a></p>
+              <p>
+                Dynamicus qui sequitur mutationem consuetudium; est notare quam 
+                littera? Decima eodem modo typi qui nunc nobis videntur parum 
+                clari fiant sollemnes in. Diam nonummy nibh euismod tincidunt ut 
+                laoreet dolore.
+              </p>
+            </di>
+          </li>
+          <!-- end slide 2 -->
+          
+        </ul>
+      </div>
+
+Everything inside the list-item slides is optional. Your slide navigation can
+be anything from next/previous links (as above) to tabs. all that matters is 
+that they link to the slide IDs.
+
+You can change the class of the slide container (.slideshow, .slides) elemtents given:
+
+* all the elements still exist 
+* you override the needed variables in your `_slideshow.sass`
+
+Your Sass:
+    
+    // Override with the proper class names for your slide/slide-nav containers
+    !slide_container      ||= ".slides"
+    !max_slides           ||= 10
+
+    // import lightboxes
+    @import css-slideshow.sass
+
+    // Make a slideshow
+    .slideshow
+      +slideshow
+      
+      // Style the slideshow yourself
+      #{!slide_container}
+        background: #ccc
+        .content
+          padding: 1.5em
+        h2
+          padding: .75em
+          background: #aaa
