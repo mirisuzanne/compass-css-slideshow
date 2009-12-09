@@ -1,0 +1,14 @@
+// Apply +slideshow to the slideshow container
+=slideshow(!slides = !slide_container, !count = !max_slides)
+  #{!slides}
+    width: 100%
+    overflow: hidden
+    ul
+      margin: 0
+      padding: 0
+      width= 100 * !count + "%"
+      +no-bullets
+      +clearfix
+      li
+        width= !count + "%"
+        +float("left")
