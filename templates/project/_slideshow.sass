@@ -9,12 +9,18 @@
 !slide_container      ||= ".slides"
 !max_slides           ||= 10
 
+
 // import lightboxes
 @import css-slideshow.sass
 
 // Style the slideshow yourself
 .slideshow
   +slideshow
-  //  Uncomment and style your slideshow:
-  //  #{!slide_container}
-  //    border: 1px solid #999
+  // Style your own slideshow
+  #{!slide_container}
+    background: #ccc
+    .content
+      padding: 1.5em
+    h2
+      padding: .75em
+      background: #aaa
