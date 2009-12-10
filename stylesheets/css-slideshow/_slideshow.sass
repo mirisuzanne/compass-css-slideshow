@@ -3,12 +3,12 @@
   #{!slides}
     width: 100%
     overflow: hidden
-    ul
+    > ul
       margin: 0
       padding: 0
       width= 100 * !count + "%"
       +no-bullets
       +clearfix
-      li
-        width= !count + "%"
+      > li
         +float("left")
+        width= 1/!count*100  + "%"
