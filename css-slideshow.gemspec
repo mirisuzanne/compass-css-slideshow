@@ -1,15 +1,15 @@
 Gem::Specification.new do |s|
   # Release Specific Information
   s.version = "0.2.0"
-  s.date = "2010-04-14"
+  s.date = "2010-04-20"
 
   # Gem Details
   s.name = "css-slideshow"
   s.authors = ["Eric Meyer"]
   s.summary = %q{a css-only slideshow implementation for compass}
   s.description = %q{a css-only slideshow implementation for compass}
-  s.email = "eriiicam@gmail.com"
-  s.homepage = "http://eric.dirtcircle.com/"
+  s.email = "eric@oddbird.net"
+  s.homepage = "http://www.oddbird.net/"
 
   # Gem Files
   s.files = %w(README.mkdn)
