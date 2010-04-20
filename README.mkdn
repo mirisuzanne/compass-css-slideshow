@@ -10,10 +10,17 @@ Based on the work of [Jenna Smith](http://growldesign.co.uk/)
 Installation
 ============
 
-in your project root directory:
+From the command line:
 
-    git clone git://github.com/ericam/compass-css-slideshow.git extensions/compass-css-slideshow/
-    compass install compass-css-slideshow
+    sudo gem install css-slideshow
+
+Add to a project (rails: compass.config, other: config.rb):
+
+    require 'css-slideshow'
+    
+Or create a new project:
+
+    compass -r css-slideshow -f css-slideshow project_directory
 
 
 Slideshows
@@ -69,24 +76,31 @@ You can change the class of the slide container (.slideshow, .slides) elemtents 
 * all the elements still exist 
 * you override the needed variables in your `_slideshow.sass`
 
-Your Sass:
+Your Scss:
     
     // Override with the proper class names for your slide/slide-nav containers
-    !slide_container      ||= ".slides"
-    !max_slides           ||= 10
+    $slide_container: ".slides";
+    $max_slides: 10;
 
     // import lightboxes
-    @import css-slideshow.sass
+    @import css-slideshow
 
     // Make a slideshow
-    .slideshow
-      +slideshow
-      
+    .slideshow {
+      @import slideshow;
+    
       // Style the slideshow yourself
-      #{!slide_container}
-        background: #ccc
-        .content
-          padding: 1.5em
-        h2
-          padding: .75em
-          background: #aaa
+      #{!slide_container} {
+        background: #ccc;
+        
+        .content {
+          padding: 1.5em;
+        }
+        
+        h2 {
+          padding: .75em;
+          background: #aaa;     
+        }
+      }
+    }
+    
