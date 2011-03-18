@@ -1,14 +1,15 @@
-// CSS SLIDESHOWS
-// Plugin by Eric Meyer - http://www.oddbird.net/
-// Based on the work of Jenna Smith - http://growldesign.co.uk/
+//** CSS SLIDESHOWS **//
 
-// Compatible with IE6+, Mozilla and Webkit browsers.
-// **Not compatible with Opera without Javascript help**
+// Default Settings ----------------------------------------------------------
 
-// Override with the proper class names for your slide/slide-nav containers
-$slide-container: ".slides" !default;
+// The selector for your carousel (relative to your container)
+$slide-carousel : "> div";
 
-$max-slides: 10 !default;
+// The selector for your slides (relative to your carousel)
+$slide          : "> article";
 
-// import lightboxes
+// The largest number of slides that this container will need to house
+$max-slides     : 10;
+
+// Import --------------------------------------------------------------------
 @import "css-slideshow/slideshow";

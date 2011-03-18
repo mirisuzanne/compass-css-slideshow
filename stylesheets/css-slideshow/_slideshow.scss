@@ -1,21 +1,25 @@
-// Apply +slideshow to the slideshow container
-@mixin slideshow($slides: $slide-container, $count: $max-slides) {
-  #{$slides} {
-    width: 100%;
-    overflow: hidden;
+//** CSS SLIDESHOWS **//
+
+// Apply to the slideshow container
+@mixin slideshow(
+  $carousel : $slide-carousel, 
+  $slide    : $slide, 
+  $count    : $max-slides
+) {
+  width: 100%;
+  overflow: hidden;
+  
+  #{$carousel} {
+    margin: 0;
+    padding: 0;
+    width: 103% * $count;
+    @include no-bullets;
+    @include clearfix;
     
-    > ul {
-      margin: 0;
-      padding: 0;
-      width: 103% * $count;
-      @include no-bullets;
-      @include clearfix;
-      
-      > li {
-        @include float(left);
-        width: 100% / (1.03 * $count);
-        margin-right: .5% / (1.03 * $count);
-      } 
+    #{$slide} {
+      @include float(left);
+      width: 100% / (1.03 * $count);
+      margin-right: .5% / (1.03 * $count);
     } 
   } 
 }
